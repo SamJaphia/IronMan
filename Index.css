@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background-color: aquamarine;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    
+}
