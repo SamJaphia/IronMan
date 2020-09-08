@@ -114,14 +114,16 @@ function startAnimating(fps){
 
 
 function animate(){
-    requestAnimationFrame(animate);    
+    requestAnimationFrame(animate);   
+    drawSprite(playerSprite, player.width * player.frameX, player.height * player.frameY, player.width, player.height, player.x, player.y, player.width * 3, player.height * 3); 
+    handlePlayerFrame();
     now = Date.now();
     elapsed = now -then;
     if(elapsed > fpsInterval){
         then = now -(elapsed % fpsInterval);
-        drawSprite(playerSprite, player.width * player.frameX, player.height * player.frameY, player.width, player.height, player.x, player.y, player.width * 3, player.height * 3);
         movePlayer();
         handlePlayerFrame();
+
     }
 }
 
