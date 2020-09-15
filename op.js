@@ -40,6 +40,28 @@ tiles: [
     1,1,1,1,1,1,1,1,1,1,
     1,1,1,1,1,1,1,1,1,1,
 ]
+=======
+    height: 16,
+    width: 16,
+    tiles: [
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 1, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,
+    ]
+>>>>>>> Stashed changes
 }; 
 
 var tile_pic = new Image();
@@ -57,6 +79,7 @@ function renderTiles(){
             buffer.fillRect(left, top, tile_size, tile_size)
 
             map_index ++;   
+            
         }
     }
 }
@@ -102,13 +125,13 @@ function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {
 }
 
 window.addEventListener("keydown", function(e){
-    keys[e.keyCode] = true;
+    keys[e.key] = true;
     player.moving = true
   
 });
 
 window.addEventListener("keyup", function(e) {
-    delete keys[e.keyCode]
+    delete keys[e.key]
     player.moving = false
 });
 
