@@ -27,7 +27,7 @@ const MAP = {
     tiles: [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 1, 1, 0, 0, 0, 0, 0, 0,
-        0, 0, 1, 1, 0, 0, 0, 1, 0, 0,
+        0, 0, 1, 0, 0, 0, 0, 1, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
         0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
@@ -50,6 +50,7 @@ function renderTiles() {
             DISPLAY.drawImage(tile_pic, tile_value * tile_size, 0, tile_size, tile_size, top, left, mapTileSize, mapTileSize);
     
             map_index ++;   
+
         }
     }
 }
@@ -68,6 +69,10 @@ function resize(event) {
 }
 
 window.addEventListener('resize', resize)
+
+function renderDisplay() {
+    DISPLAY.drawImage(canvas, 0, )
+}
 
 resize()
 
@@ -140,4 +145,4 @@ function animate(){
 
 startAnimating(10);
 
-})()
+})();
