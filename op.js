@@ -58,7 +58,7 @@ function renderTiles() {
     }
 }
 
-function resize(event) {
+function resize(e) {
 
     
     var height = document.documentElement.clientHeight;
