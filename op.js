@@ -127,7 +127,7 @@ function animate(){
     requestAnimationFrame(animate);
 
     now = Date.now();
-    elapsed = now - then;
+    elapsed = now - then
 
     DISPLAY.clearRect(0, 0, DISPLAY.width, DISPLAY.height);
     renderTiles();
