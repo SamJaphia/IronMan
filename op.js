@@ -25,7 +25,7 @@ const MAP = {
 
     
 
-    height: 6,
+    height: 7,
     width: 10,
     tiles: [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
