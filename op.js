@@ -22,6 +22,9 @@ const tile_size = 166;
 const mapTileSize = 24;
 
 const MAP = {
+
+    
+
     height: 6,
     width: 10,
     tiles: [
@@ -48,7 +51,7 @@ function renderTiles() {
             var tile_value = MAP.tiles[map_index];
             
             DISPLAY.drawImage(tile_pic, tile_value * tile_size, 0, tile_size, tile_size, top, left, mapTileSize, mapTileSize);
-    
+
             map_index ++;   
 
         }
@@ -56,25 +59,19 @@ function renderTiles() {
 }
 
 function resize(event) {
+
+    
     var height = document.documentElement.clientHeight;
-    var width = document.documentElement.clientWidth;
+    var width  = document.documentElement.clientWidth;
 
-    if (width / height < MAP.width_height_ratio) {
-        height = Math.floor(width / MAP.width_height_ratio);
-    }else                                        {
-        width = Math.floor(width * MAP.width_height_ratio);
-    }
+    
+    if (width / height < MAP.width_height_ratio) height = Math.floor(width  / MAP.width_height_ratio);
+    else                                         width  = Math.floor(height * MAP.width_height_ratio);
+
+    
     DISPLAY.canvas.style.height = height + 'px';
-    DISPLAY.canvas.style.width = width + 'px';
-}
-
-window.addEventListener('resize', resize)
-
-function renderDisplay() {
-    DISPLAY.drawImage(canvas, 0, )
-}
-
-resize()
+    DISPLAY.canvas.style.width  = width  + 'px';
+  }
 
 const playerSprite = new Image();
 playerSprite.src = "Images/ironman.png";
@@ -143,6 +140,12 @@ function animate(){
     }
 }
 
+window.addEventListener('resize', resize);
+
+resize();
+
 startAnimating(10);
 
+
 })();
+
