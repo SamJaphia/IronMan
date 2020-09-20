@@ -23,7 +23,7 @@ const mapTileSize = 24;
 
 const MAP = {
 
-    
+
 
     height: 7,
     width: 10,
@@ -35,6 +35,7 @@ const MAP = {
         0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
         0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
     ],
+
 }; 
 
 const mapWidth = MAP.width * mapTileSize;
