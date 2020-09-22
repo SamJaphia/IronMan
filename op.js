@@ -74,8 +74,12 @@ function resize(e) {
     DISPLAY.canvas.style.height = height + 'px';
     DISPLAY.canvas.style.width  = width  + 'px';
 
-    
+    DISPLAY.canvas.style.marginTop = (innerHeight/2 - height/2 ) + 'px';
+    DISPLAY.canvas.style.marginLeft = (innerWidth/2 - width/2) + 'px'
+
   }
+
+
 
 const playerSprite = new Image();
 playerSprite.src = "Images/ironman.png";
