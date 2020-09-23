@@ -43,8 +43,6 @@ const mapHeight = MAP.height * mapTileSize;
 
 var tile_pic = new Image();
 tile_pic.src = "Images/tilemap.png";
-DISPLAY.width = this.naturalWwidth;
-DISPLAY.height = this.naturalHeight;
 
 function renderTiles() {
     var map_index = 0;
