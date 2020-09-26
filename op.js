@@ -68,17 +68,27 @@ function collisionTime(player) {
 }
 function resize(e) {
 
-    
-    var height = document.documentElement.clientHeight;
-    var width  = document.documentElement.clientWidth;
+    const rectangle = DISPLAY.canvas.getBoundingClientRect()
 
-    
-    if (width / height < MAP.width_height_ratio) height = Math.floor(width  / MAP.width_height_ratio);
-    else                                         width  = Math.floor(1900 * MAP.width_height_ratio);
+    const output = document.createElement('p')
 
-    DISPLAY.canvas.height.marginTop = (innerHeight/2 - height/2) + 'px';
-    DISPLAY.canvas.width.marginLeft = (innerWidth/2 - width/2) + 'px';
+    output.style.frameY = rectangle.frameY + 'px';
+    output.style.frameX =rectangle.frameX + 'px';
 
+    const window_width = document.documentElement.clientWidth;
+    const window_height = document.documentElement.clientHeight;
+
+    const display_width = DISPLAY.canvas.width;
+    const display_height = DISPLAY.canvas.height;
+
+    const width_ratio = window_width / display_width;
+    const height_ratio = window_height / display_height;
+
+    const scale = width_ratio > height_ratio ? width_ratio : height_ratio;
+
+    DISPLAY.canvas.style.height = Math.floor(display_height * 5) + 'px';
+    DISPLAY.canvas.style.width = Math.floor(display_width * 5) + 'px'
+  
   }
 
 
