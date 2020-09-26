@@ -18,6 +18,7 @@ const player = {
 };
 
 
+
 const tile_size = 166;
 
 const mapTileSize = 24;
@@ -57,7 +58,14 @@ function renderTiles() {
     }
 }
 
+function collisionTime(player) {
+    if(MAP > player || MAP < player || MAP < player || MAP > player) {
 
+        return false;
+    }
+
+    return true;
+}
 function resize(e) {
 
     
@@ -68,12 +76,8 @@ function resize(e) {
     if (width / height < MAP.width_height_ratio) height = Math.floor(width  / MAP.width_height_ratio);
     else                                         width  = Math.floor(1900 * MAP.width_height_ratio);
 
-    
-    DISPLAY.canvas.style.height = height + 'px';
-    DISPLAY.canvas.style.width  = width  + 'px';
-
-    DISPLAY.canvas.style.marginTop = (innerHeight/2 - height/2 ) + 'px';
-    DISPLAY.canvas.style.marginLeft = (innerWidth/2 - width/2) + 'px'
+    DISPLAY.canvas.height.marginTop = (innerHeight/2 - height/2) + 'px';
+    DISPLAY.canvas.width.marginLeft = (innerWidth/2 - width/2) + 'px';
 
   }
 
@@ -151,6 +155,8 @@ window.addEventListener('resize', resize);
 resize();
 
 startAnimating(10);
+
+collisionTime()
 
 })();
 
