@@ -86,6 +86,8 @@ function resize(e) {
 
     const scale = width_ratio > height_ratio ? width_ratio : height_ratio;
 
+    DISPLAY.canvas.style.height = Math.floor(display_height * scale) + 'px';
+    DISPLAY.canvas.style.width = Math.floor(display_width * scale) + 'px'
   
   }
 
