@@ -21,7 +21,7 @@ const player = {
 
 const tile_size = 166;
 
-const mapTileSize = 24;
+const mapTileSize = 20;
 
 const MAP = {
 
@@ -68,26 +68,8 @@ function collisionTime(player) {
 }
 function resize(e) {
 
-    const rectangle = DISPLAY.canvas.getBoundingClientRect()
-
-    const output = document.createElement('p')
-
-    output.style.frameY = rectangle.frameY + 'px';
-    output.style.frameX =rectangle.frameX + 'px';
-
-    const window_width = document.documentElement.clientWidth;
-    const window_height = document.documentElement.clientHeight;
-
-    const display_width = DISPLAY.canvas.width;
-    const display_height = DISPLAY.canvas.height;
-
-    const width_ratio = window_width / display_width;
-    const height_ratio = window_height / display_height;
-
-    const scale = width_ratio > height_ratio ? width_ratio : height_ratio;
-
-    DISPLAY.canvas.style.height = Math.floor(display_height * scale) + 'px';
-    DISPLAY.canvas.style.width = Math.floor(display_width * scale) + 'px'
+    const window_width = window.innerWidth;;
+    const window_height = window.innerHeight;;
   
   }
 
