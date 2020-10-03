@@ -59,12 +59,6 @@ function renderTiles() {
     }
 }
 
-function collisionOfTiles() {
-    if( player.x < MAP.x + MAP.width && player.x + player.width > MAP.x && 
-          player.y < MAP.y + MAP.height &&
-          player.y + player.height >MAP.y
-      )
-    }  
 
 function resize(e) {
 
@@ -98,11 +92,11 @@ window.addEventListener("keyup", function(e) {
 });
 
 function movePlayer() {
-    if (keys['ArrowLeft'] && player.x > 0){
-        player.x -= player.speed;
+    if (keys['ArrowLeft'] && player.x  === !MAP.tiles[0]){
+        player.x += player.speed;
         player.frameY = 1;
     }
-    if (keys['ArrowRight'] && player.x < mapWidth - player.screenWidth) {
+   else if (keys['ArrowRight'] && player.x < mapWidth - player.screenWidth || player.x < MAP.tiles[1]) {
         player.x += player.speed;
         player.frameY = 2;
     }
@@ -118,6 +112,17 @@ function movePlayer() {
         
     }
 }
+
+function collissionOfTiles(){
+    if(player.x < 0 || player.x > width){
+        player *= -1;
+    }
+
+    if (player.y < 0 || player.height){
+        player *=-1;
+    }
+}
+
 
 function handlePlayerFrame() {
     if (player.frameX < 3 && player.moving) player.frameX++;
@@ -150,11 +155,12 @@ function animate(){
     }
 }
 
+
 window.addEventListener('resize', resize);
 
 resize();
 
-collisionOfTiles();
+
 
 startAnimating(10);
 
