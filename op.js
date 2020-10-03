@@ -62,7 +62,6 @@ function renderTiles() {
 function collisionOfTiles() {
     if( player.x < MAP.x + MAP.width && player.x + player.width > MAP.x && 
           player.y < MAP.y + MAP.height &&
-          player.y + plater.height >MAP.y
       )
     }  
 
