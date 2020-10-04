@@ -80,6 +80,14 @@ function resize(e) {
 const playerSprite = new Image();
 playerSprite.src = "Images/ironman.png";
 
+player_column = Math.floor(player.x / mapWidth); 
+player_row = Math.floor(player.y / mapHeight); 
+tile_value = MAP.tiles[player_row * MAP.columns + player_column]; 
+
+if (tile_value === 1) return true;
+
+else (player_column =-1)
+
 window.addEventListener("keydown", function(e){
     keys[e.key] = true;
     player.moving = true;
@@ -91,8 +99,9 @@ window.addEventListener("keyup", function(e) {
     player.moving = false;
 });
 
+
 function movePlayer() {
-    if (keys['ArrowLeft'] && player.x  === !MAP.tiles[0]){
+    if (keys['ArrowLeft'] && player.x < 0){
         player.x += player.speed;
         player.frameY = 1;
     }
