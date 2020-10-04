@@ -101,7 +101,7 @@ window.addEventListener("keyup", function(e) {
 
 
 function movePlayer() {
-    if (keys['ArrowLeft'] && player.x < 0){
+    if (keys['ArrowLeft'] && player.x < 0 && tile_value === 1){
         player.x += player.speed;
         player.frameY = 1;
     }
